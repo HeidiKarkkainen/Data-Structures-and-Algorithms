@@ -6,7 +6,7 @@ You as a student should fork and clone this repository. You will then work on th
 
 ## GitLab 
 
-You must **create an account** at [GitLab](https://gitlab.com) *using your* `student.oulu.fi` email address. All exercises and course projects are delivered through GitLab. You must fork this repository and deliver all your course work through that forked private repository. University of Oulu has an educational license for GitLab, and using the `oulu.fi` email address ties your work to the University's license.
+You will need **an account** at [GitLab](https://gitlab.com). All exercises and course projects are delivered through GitLab. You must fork this repository and deliver all your course work through that forked private repository.
 
 More information about how to use git and GitLab in the course is provided elsewhere. If this file is located now on your own PC, you should have gotten this project by a) forking the course repository to a private repository of your own, and then b) cloning it to your PC. Instructions on how to do that is provided below.
 
@@ -62,10 +62,10 @@ This step is done only *once* assuming you will work from one PC throughout the 
 1. **Fork** the project from the repository web page. You will get your own forked copy of the repository in GitLab.
 1. From the forked project settings, **make** your project **private**.
 1. **Add the course teachers** to your private repository with **Developer** access level. Teachers need access to help you solve issues in the exercises and grade your work in the course. No one else than you and the teachers should have access to the forked private repository of yours.
-1. **Open the terminal** on your PC.
+1. **Open the command prompt** (terminal window) on your PC.
 1. **Navigate** to a directory you want to place your *local cloned* repository. Select a directory path with *no spaces nor special characters* in the directory names. Some tools do not like these at all. All work done in the course will be located in this directory.
-1. **Clone** your private remote repository to your PC: `git clone <url-to-your-remote-private-forked-repository>`. You need to provide the GitLab credentials (username and password) at this point.
-1. You should have now a local repository, a "copy" of your remote private repository, on your PC. 
+1. **Clone** your private remote repository to your PC: `git clone <url-to-your-remote-private-forked-repository>`. You need to provide the GitLab credentials (username and password) at this point. Enter the private repository URL after `clone` without the "< >" characters -- just the URL to the repository.
+1. You should have now a **local repository**, a "copy" of your remote private repository, on your PC. 
 
 In the terminal, list the contents of the directory (`dir` on Windows, `ls` on Unixes). Browse the subdirectories and files to study what is included. 
 
