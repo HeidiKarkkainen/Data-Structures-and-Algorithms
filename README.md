@@ -61,7 +61,7 @@ This step is done only *once* assuming you will work from one PC throughout the 
 1. Login to your GitLab account and access this TIRA course project repository. URL is provided in the course Moodle workspace. Though if you are reading this, you probably have that URL already :)
 1. **Fork** the project from the repository web page. You will get your own forked copy of the repository in GitLab.
 1. From the forked project settings, **make** your project **private**.
-1. **Add the course teachers** to your private repository. Teachers need access to help you solve issues in the exercises and grade your work in the course. No one else than you and the teachers should have access to the forked private repository of yours.
+1. **Add the course teachers** to your private repository with **Developer** access level. Teachers need access to help you solve issues in the exercises and grade your work in the course. No one else than you and the teachers should have access to the forked private repository of yours.
 1. **Open the terminal** on your PC.
 1. **Navigate** to a directory you want to place your *local cloned* repository. Select a directory path with *no spaces nor special characters* in the directory names. Some tools do not like these at all. All work done in the course will be located in this directory.
 1. **Clone** your private remote repository to your PC: `git clone <url-to-your-remote-private-forked-repository>`. You need to provide the GitLab credentials (username and password) at this point.
