@@ -51,11 +51,10 @@ public class ParenthesisChecker {
       // TODO:
       // for each character in the input string
       //   if character is an opening parenthesis -- one of "([{"
-      //      push it into the stack (check for failure and throw an exception if so)
+      //      push it into the stack
       //   else if character is a closing parenthesis -- one of ")]}"
       //      pop the latest opening parenthesis from the stack
-      //      if the popped item is null
-      //         throw an exception, there are too many closing parentheses 
+      //        if this throws an exception, stack was empty: there are too many closing parentheses 
       //      check the popped opening parenthesis against the closing parenthesis read from the string
       //      if they do not match -- opening was { but closing was ], for example.
       //         throw an exception, wrong kind of parenthesis were in the text (e.g. "asfa ( asdf } sadf")
