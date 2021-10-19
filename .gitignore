@@ -1,0 +1,11 @@
+doc/
+target/
+*.class
+.settings
+.vscode
+.classpath
+.project
+.DS_Store
+.build/
+.swiftpm/
+*.svg
