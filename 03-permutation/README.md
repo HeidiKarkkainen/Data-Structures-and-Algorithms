@@ -78,8 +78,8 @@ The implementatin and report together are evaluated and graded on scale 1-5 pts 
 
 ## Delivery
 
+* Add the pdf file (or .md and image files) to git and then commit and push the project to the remote repository.
 * Deliver your updated repository as instructed in the course.
-* Upload your report in PDF format to the designated return box in the course Moodle workspace.
 
 ## Issues or questions?
 
