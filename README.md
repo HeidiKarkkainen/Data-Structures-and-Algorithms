@@ -117,7 +117,7 @@ The actual lectures are **recordings** viewable at suitable times considering yo
 |      |  Lecture 19   |                      |                                 |                          |
 |  49  | +Lecture 20   | Q&A                  | Course project                  | SwiftKickForwardParallel |
 |  50  |               | Exam                 | Course project                  |                          |
-|2/2022|**2022-01-10** |**23:59 EET**         |**Deadline for**                 | **all course work**      |
+|2/2022|**2022-01-14** |**23:59 EET**         |**Deadline for**                 | **all course work**      |
 
 ## Grading
 
