@@ -93,33 +93,35 @@ Note that those who apply for the study program **Candidate Project** course sta
 
 The actual lectures are **recordings** viewable at suitable times considering your own schedules. Note that you must watch the corresponding lecture videos and view relevant demonstrations *before* the exercises. So reserve enought time to view the lectures each week before the exercise. Lecture topics and exercise numbers match so you can use these to make sure you view lectures on time.
 
+Note that if you decide to do the **Mazes course project** and not the BooksAndWords, you may want to start watching the Graph lectures earlier to get a good start to your course project. This way you have more time to focus on the Maze project than watching the lectures following the default time table.
+
 **Exercises** are scheduled so that you *start* working on them the week indicated. You may work on the exercise later; no other deadline for exercises than the course deadline at the end. But do not push the work too far ahead, then you have many unfinished exercises to work with, overloading you. It is a good idea to start working on the exercises *before* the actual exercise sessions. Otherwise, in the session you do not have anything (questions, problems) teachers can help you with. Using the exercise sessions to read instructions is not productive use of time.
 
 
-| Week | Lecture #         | Topic                | Exercise                        | Lecture Demo             |
-|------|-------------------|----------------------|---------------------------------|--------------------------|
-|  44  | +Lecture 1  01Nov | 00 Course intro      | [00-init](00-init)              | SSN                      |
-|      |  Lecture 2  03Nov | 01 Topic intro       | [02-arrays](02-arrays)          | BooksAndWords - BadBook  |
-|      | +Lecture 3  05Nov | 02 Time complexity   | [02-mode](02-mode)              |                          |
-|  45  | +Lecture 4  08Nov | 03 Analysis          | [03-permutation](03-permutation)| Fibonacci - Maze         |
-|      |  Lecture 5  09Nov | 03 Analysis          | [04-stack](04-stack)            |                          |
-|      | +Lecture 6  10Nov | 04-1 Stack           |                                 |  Persistence & Outsource |
-|      |  Lecture 7  12Nov | 04-2 Queue + list    |                                 |                          |
-|  46  | +Lecture 8  15Nov | 05 Sorting algorithms| [04-queue](04-queue)            |             Arrays&Lists |
-|      |  Lecture 9  16Nov | 05 Sorting algorithms| [04-linkedlist](04-linkedlist)  |            SortSpectacle |
-|      | +Lecture 10 17Nov | 06 Hash tables       |                                 |LinkedList  SwiftPipeline |
-|      |  Lecture 11 19Nov | 06 Hash              |                                 |                          |
-|  47  | +Lecture 12 xxNov | 07 Binary search tree| [05-binsearch](05-binsearch)    |          BSTree & Events |
-|      |  Lecture 13 xxNov | 08 Graphs 1          | [05-invoices](05-invoices)      |                   Graphs |
-|      | +Lecture 14 xxNov | 08 Graphs 2          |                                 |   Graphs, InfiniteMirror |
-|      |  Lecture 15 xxNov | 08 Graphs 3          |                                 |                   Graphs |
-|  48  | +Lecture 16 xxNov | 09 Design & Dynamic  | [67-phonebook](67-phonebook)    |         SwiftKickforward |
-|      |  Lecture 17 xxNov |                      | Course project                  |                          |
-|      | +Lecture 18 xxDec | Q&A                  |                                 |            SwiftPipeline |
-|      |  Lecture 19 xxDec |                      |                                 |                          |
-|  49  | +Lecture 20 xxDec | Q&A                  | Course project                  | SwiftKickForwardParallel |
-|  50  |                   | Exam                 | Course project                  |                          |
-|2/2022|**2022-01-14**     |**23:59 EET**         |**Deadline for**                 | **all course work**      |
+| Week | Lecture #    | View  | Topic                | Exercise                        | Lecture Demo             |
+|------|--------------|-------|----------------------|---------------------------------|--------------------------|
+|  44  | +Lecture 1   | 01Nov | 00 Course intro      | [00-init](00-init)              | SSN                      |
+|      |  Lecture 2   | 03Nov | 01 Topic intro       | [02-arrays](02-arrays)          | BooksAndWords - BadBook  |
+|      | +Lecture 3   | 05Nov | 02 Time complexity   | [02-mode](02-mode)              |                          |
+|  45  | +Lecture 4   | 08Nov | 03 Analysis          | [03-permutation](03-permutation)| Fibonacci - Maze         |
+|      |  Lecture 5   | 09Nov | 03 Analysis          | [04-stack](04-stack)            |                          |
+|      | +Lecture 6   | 10Nov | 04-1 Stack           |                                 |  Persistence & Outsource |
+|      |  Lecture 7   | 12Nov | 04-2 Queue + list    |                                 |                          |
+|  46  | +Lecture 8   | 15Nov | 05 Sorting algorithms| [04-queue](04-queue)            |             Arrays&Lists |
+|      |  Lecture 9   | 16Nov | 05 Sorting algorithms| [04-linkedlist](04-linkedlist)  |            SortSpectacle |
+|      | +Lecture 10  | 17Nov | 06 Hash tables       |                                 |LinkedList  SwiftPipeline |
+|      |  Lecture 11  | 19Nov | 06 Hash              |                                 |                          |
+|  47  | +Lecture 12  | 22Nov | 07 Binary search tree| [05-binsearch](05-binsearch)    |          BSTree & Events |
+|      |  Lecture 13  | 23Nov | 07 Binary search tree| [05-invoices](05-invoices)      |                   Graphs |
+|      | +Lecture 14  | xxNov | 08 Graphs 1          |                                 |   Graphs, InfiniteMirror |
+|      |  Lecture 15  | xxNov | 08 Graphs 3          |                                 |                   Graphs |
+|  48  | +Lecture 16  | xxNov | 09 Design & Dynamic  | [67-phonebook](67-phonebook)    |         SwiftKickforward |
+|      |  Lecture 17  | xxNov |                      | Course project                  |                          |
+|      | +Lecture 18  | xxDec | Q&A                  |                                 |            SwiftPipeline |
+|      |  Lecture 19  | xxDec |                      |                                 |                          |
+|  49  | +Lecture 20  | xxDec | Q&A                  | Course project                  | SwiftKickForwardParallel |
+|  50  |              |       | Exam                 | Course project                  |                          |
+|2/2022|**2022-01-14**|       |**23:59 EET**         |**Deadline for**                 | **all course work**      |
 
 ## Grading
 
