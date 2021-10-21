@@ -17,7 +17,7 @@ You also **must fill in the Moodle form** where you specify the requested inform
 The tools that are used in this course and you need to install, are:
 
 * [git](https://git-scm.com) for version control and delivering work to teachers.
-* [JDK version 15](https://jdk.java.net/15/) -- install the version 15 if you have an older JDK.
+* [JDK version 17](https://jdk.java.net/17/) -- install the version 17 if you have an older JDK. JDK 16 is also OK.
 * [Maven](http://maven.apache.org) for building and running tests. Install the latest version.
 * IDE for coding and debugging -- teachers use [Visual Studio Code](https://code.visualstudio.com), and recommend that for you too.
 * [Java extensions](https://code.visualstudio.com/docs/java/java-tutorial) to the VS Code. Useful extensions are Extension Pack for Java, Language support for Java by Red Hat and Maven for Java extensions for VS Code.
@@ -27,20 +27,22 @@ You can check the versions of tools you may have installed or now install, using
 ```console
 > git --version
 git version 2.30.1 (Apple Git-130)
-> java --version
-openjdk 15.0.1 2020-10-20
-OpenJDK Runtime Environment Zulu15.28+1013-CA (build 15.0.1+9)
-OpenJDK 64-Bit Server VM Zulu15.28+1013-CA (build 15.0.1+9, mixed mode)
+
 > mvn --version
-Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
-Maven home: /opt/apache-maven-3.6.3
-Java version: 15.0.1, vendor: Azul Systems, Inc., runtime: /Library/Java/JavaVirtualMachines/zulu-15.jdk/Contents/Home
+Apache Maven 3.8.3 (ff8e977a158738155dc465c6a97ffaf31982d739)
+Maven home: /usr/local/Cellar/maven/3.8.3/libexec
+Java version: 17, vendor: Homebrew, runtime: /usr/local/Cellar/openjdk/17/libexec/openjdk.jdk/Contents/Home
 Default locale: fi_FI, platform encoding: UTF-8
-OS name: "mac os x", version: "11.6", arch: "aarch64", family: "mac"
+OS name: "mac os x", version: "11.6", arch: "x86_64", family: "mac"
+
+> java --version
+openjdk 17 2021-09-14
+OpenJDK Runtime Environment Homebrew (build 17+0)
+OpenJDK 64-Bit Server VM Homebrew (build 17+0, mixed mode, sharing)
 ```
 VS Code version can be checked from the VSC menus. Installed VSC extensions can be seen from the VSC Extensions tool.
 
-**Make sure** JDK `bin` and Maven `bin` directories are on your **PATH** environment variable, and that **JAVA_HOME** environment variable points to the JDK 15 home directory!
+**Make sure** JDK `bin` and Maven `bin` directories are on your **PATH** environment variable, and that **JAVA_HOME** environment variable points to the JDK home directory!
 
 Each exercise contains unit tests. For unit testing, JUnit Jupiter version 5.7 or newer is used. These component dependencies (JUnit Jupiter) are installed by Maven / Visual Studio Code *automatically*. You do not have to try to install these yourself.
 
@@ -54,7 +56,7 @@ After installing the tools, continue reading.
 
 The instructions assume you are reading this from the GitLab web page of the course repository.
 
-First step is to fork the course project in GitLab and clone it to your own PC, assuming you are reading this from the web pages of the course repository.
+First step is to fork the course project in GitLab and clone it to your own PC, assuming you are reading this from the web pages of the course repository. The course Moodle workspace has instructions for you how to do all this, so **check out that first**.
 
 This step is done only *once* assuming you will work from one PC throughout the course. After executing the steps below, you have the project on your PC. Later you will add and change files in the local project, commit the changes and when needed, update the remote repository from your local repository.
 
