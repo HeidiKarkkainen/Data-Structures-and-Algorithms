@@ -54,7 +54,7 @@ Note that if you decide to do the **Mazes course project** and not the BooksAndW
 |      |  Lecture 7   | 12 Nov | 04-2 Queue + list    |                                 |                          |
 |  46  | +Lecture 8   | 15 Nov | 05 Sorting algorithms| [04-queue](04-queue)            |             Arrays&Lists |
 |      |  Lecture 9   | 16 Nov | 05 Sorting algorithms| [04-linkedlist](04-linkedlist)  |            SortSpectacle |
-|      | +Lecture 10  | 17 Nov | 06 Hash tables       |                                 |LinkedList  SwiftPipeline |
+|      | +Lecture 10  | 17 Nov | 06 Hash tables       |                                 |               Functional |
 |      |  Lecture 11  | 19 Nov | 06 Hash              |                                 |                          |
 |  47  | +Lecture 12  | 22 Nov | 07 Binary search tree| [05-binsearch](05-binsearch)    |          BSTree & Events |
 |      |  Lecture 13  | 23 Nov | 07 Binary search tree| [05-invoices](05-invoices)      |                   Graphs |
