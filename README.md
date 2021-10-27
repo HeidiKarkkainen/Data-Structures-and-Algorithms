@@ -32,7 +32,7 @@ Each subdirectory contains detailed instructions in `README.md` files for that s
 
 When the course deadline comes, teachers will use automatic scripts that will clone all student repositories for evaluation and grading. The version on that date & time will be evaluated.  Late deliveries are *not* taken into account.
 
-Note that those who apply for the study program **Candidate Project** course starting in January 2022 will have a **deadline earlier in December**. Exact date is communicated in the course Moodle workspace.
+> Note that those who apply for the IPS study program **Candidate Project** course starting in January 2022 will have an **earlier deadline in Jan 4th**.
 
 **Lectures** marked with + are short, online **live Q&A and demonstration sessions**, not actual lectures.
 
@@ -66,6 +66,7 @@ Note that if you decide to do the **Mazes course project** and not the BooksAndW
 |      |  Lecture 19  | xx Dec |                      |                                 |                          |
 |  49  | +Lecture 20  | xx Dec | Q&A                  | Course project                  | SwiftKickForwardParallel |
 |  50  |              |        | Exam                 | Course project                  |                          |
+|1/2022|**2022-01-04**|        |**23:59 EET**         |**Deadline for BSc Project**     |                          |
 |2/2022|**2022-01-14**|        |**23:59 EET**         |**Deadline for**                 | **all course work**      |
 
 ## Grading
