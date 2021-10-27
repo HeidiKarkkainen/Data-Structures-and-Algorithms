@@ -2,19 +2,19 @@
 
 For your support.
 
-| Command            | Example                                           | Description                          |
-|--------------------|---------------------------------------------------|--------------------------------------|
-| git config *1)*    | git config --global user.name "John Doe"          | Configures your name to git.         |
-|                    | git config --global user.email johndoe@example.com| Configures your email to git.        |
-|            *2)*    | git config --global core.editor *some editor*     | Configures the editor used with git. |
-| git clone          | git@gitlab.com:some-example-repository-here.git   | Copy remote repository to your PC.   |
-| git status         | git status                                        | See local changes in files.          |
-| git diff           | git diff                                          | See all changes to files.            |
-| git log            | git log, git log SomeFile.java                    | See commits and commit messages      |
-| git add *3)*       | git add SomeFile.java                             | Adds a (new) file to next commit.    |
-| git commit *4)*    | git commit -am"What was done here."               | Commits changes to local repository. |
-| git push           | git push                                          | Pushes *committed* changes to remote.|
-| git pull *5)*      | git pull                                          | Fetches changes from the remote.     |
+| Command            | Example                                           | Description                           |
+|--------------------|---------------------------------------------------|---------------------------------------|
+| git config *1)*    | git config --global user.name "John Doe"          | Configures your name to git.          |
+|                    | git config --global user.email johndoe@example.com| Configures your email to git.         |
+|            *2)*    | git config --global core.editor *some editor*     | Configures the editor used with git.  |
+| git clone          | git@gitlab.com:some-example-repository-here.git   | Copy remote repository to your PC.    |
+| git status         | git status                                        | See changed files in local repository.|
+| git diff           | git diff                                          | See all changes in local repository   |
+| git log            | git log, git log SomeFile.java                    | See commits and commit messages.      |
+| git add *3)*       | git add SomeFile.java                             | Adds new/changed file to next commit. |
+| git commit *4)*    | git commit -am"What was done here."               | Commits changes to local repository.  |
+| git push           | git push                                          | Pushes *committed* changes to remote. |
+| git pull *5)*      | git pull                                          | Fetches changes from the remote.      |
 
 Notes:
 
