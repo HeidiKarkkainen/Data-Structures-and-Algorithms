@@ -2,6 +2,10 @@
 
 This readme instructs you what tools are needed and where to get them.
 
+Tool installations and the setup (details in [SETUP.MD](SETUP.md)) are demonstrated in the [course video](https://youtu.be/5Mc8jyl76qA).
+
+Another [demo video](https://youtu.be/TzN7wTrvejI) (13min 50s) focuses more on basics of command prompt and Windows developer settings. If you are not familiar with these, take a look at that video.
+
 ## Tools
 
 The tools that are used in this course and you need to install, are:
@@ -33,8 +37,6 @@ OpenJDK 64-Bit Server VM Homebrew (build 17+0, mixed mode, sharing)
 VS Code version can be checked from the VSC menus. Installed VSC extensions can be seen from the VSC Extensions tool.
 
 **Make sure** JDK `bin` and Maven `bin` directories are on your **PATH** environment variable, and that **JAVA_HOME** environment variable points to the JDK home directory! 
-
-Course [demo video](https://youtu.be/TzN7wTrvejI) (YouTube, Finnish) shows you how to change the environment variables in Windows.
 
 Each exercise contains unit tests. For unit testing, JUnit Jupiter version 5.7 or newer is used. These component dependencies (JUnit Jupiter) are installed by Maven / Visual Studio Code *automatically*. You do not have to try to install these yourself.
 
