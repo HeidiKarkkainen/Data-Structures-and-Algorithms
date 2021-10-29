@@ -47,7 +47,7 @@ Note that if you decide to do the **Mazes course project** and not the BooksAndW
 |------|--------------|--------|----------------------|---------------------------------|--------------------------|
 |  44  | +Lecture 1   | 01 Nov | 00 Course intro      | [00-init](00-init)              | SSN                      |
 |      |  Lecture 2   | 03 Nov | 01 Topic intro       | [02-arrays](02-arrays)          | BooksAndWords - BadBook  |
-|      | +Lecture 3   | 05 Nov | 02 Time complexity   | [02-mode](02-mode)              |                          |
+|      |  Lecture 3   | 05 Nov | 02 Time complexity   | [02-mode](02-mode)              |                          |
 |  45  | +Lecture 4   | 08 Nov | 03 Analysis          | [03-permutation](03-permutation)| Fibonacci - Maze         |
 |      |  Lecture 5   | 09 Nov | 03 Analysis          | [04-stack](04-stack)            |                          |
 |      | +Lecture 6   | 10 Nov | 04-1 Stack           |                                 |  Persistence & Outsource |
@@ -55,16 +55,16 @@ Note that if you decide to do the **Mazes course project** and not the BooksAndW
 |  46  | +Lecture 8   | 15 Nov | 05 Sorting algorithms| [04-queue](04-queue)            |             Arrays&Lists |
 |      |  Lecture 9   | 16 Nov | 05 Sorting algorithms| [04-linkedlist](04-linkedlist)  |            SortSpectacle |
 |      | +Lecture 10  | 17 Nov | 06 Hash tables       |                                 |               Functional |
-|      |  Lecture 11  | 19 Nov | 06 Hash              |                                 |                          |
+|      |  Lecture 11  | 19 Nov | 06 Hash tables       |                                 |                          |
 |  47  | +Lecture 12  | 22 Nov | 07 Binary search tree| [05-binsearch](05-binsearch)    |          BSTree & Events |
 |      |  Lecture 13  | 23 Nov | 07 Binary search tree| [05-invoices](05-invoices)      |                   Graphs |
-|      | +Lecture 14  | 26 Nov | 08 Graphs part 1     |                                 |   Graphs, InfiniteMirror |
-|      |  Lecture 15  | 30 Nov | 08 Graphs part 2     |                                 |                   Graphs |
-|  48  | +Lecture 16  | xx Nov | 09 Design & Dynamic  | [67-phonebook](67-phonebook)    |         SwiftKickforward |
-|      |  Lecture 17  | xx Nov |                      | Course project                  |                          |
-|      | +Lecture 18  | xx Dec | Q&A                  |                                 |            SwiftPipeline |
-|      |  Lecture 19  | xx Dec |                      |                                 |                          |
-|  49  | +Lecture 20  | xx Dec | Q&A                  | Course project                  | SwiftKickForwardParallel |
+|      | +Lecture 14  | 24 Nov | 08 Graphs part 1     |                                 |   Graphs, InfiniteMirror |
+|      |  Lecture 15  | 26 Nov | 08 Graphs part 1     |                                 |                   Graphs |
+|  48  | +Lecture 16  | 29 Nov | 08 Graphs part 2     | [67-phonebook](67-phonebook)    |         SwiftKickforward |
+|      |          17  | 30 Dec | 08 Graphs part 2     | Course project                  |                          |
+|      | +Lecture 18  | 01 Dec | 09 Design & Dynamic  |                                 |            SwiftPipeline |
+|      |          19  | 03 Dec | 09 Design & Dynamic  |                                 |                          |
+|  49  | +Lecture 20  | 09 Dec | Q&A                  | Course project                  | SwiftKickForwardParallel |
 |  50  |              |        | Exam                 | Course project                  |                          |
 |1/2022|**2022-01-04**|        |**23:59 EET**         |**Deadline for BSc Project**     |                          |
 |2/2022|**2022-01-14**|        |**23:59 EET**         |**Deadline for**                 | **all course work**      |
