@@ -1,4 +1,5 @@
 package oy.tol.tra;
+import java.util.Arrays;
 
 /**
  * For finding the mode of a number from an array of integers.
@@ -27,9 +28,29 @@ public class Mode {
     */
    public static Result findMode(int [] array) {
       // TODO: implement this to find the mode of the integer array.
+
+      Arrays.sort(array);
       Result result = new Result();
       result.number = -1;
       result.count = -1;
+      int mode = array[0];
+      int modeLength = 1;
+      int currentLength = 1;
+
+      for (int i = 1; i < array.length; i++){
+         
+         if (array[i-1] == array[i]){
+            currentLength += 1;
+            if (modeLength < currentLength) {
+               mode = array[i];
+               modeLength = currentLength;
+            }
+         } else {
+            currentLength = 1;
+         }
+      }
+      result.number = mode;
+      result.count = modeLength;
       return result;
    }
 }
