@@ -9,7 +9,7 @@ import java.lang.reflect.Array;
  */
 public class StackImplementation<E> implements StackInterface<E> {
 
-   private E [] itemArray;
+   private E[] itemArray;
    private int capacity;
    private int currentIndex = -1;
 
@@ -21,51 +21,80 @@ public class StackImplementation<E> implements StackInterface<E> {
       try {
          capacity = size;
          currentIndex = -1;
-         itemArray = (E []) Array.newInstance(elementClass, capacity);   
+         itemArray = (E[]) Array.newInstance(elementClass, capacity);
       } catch (Exception e) {
          throw new StackAllocationException(e.getMessage());
       }
    }
 
    @Override
-   public int capacity() {
-      // TODO: Implement this
-      return -1;
+   public int capacity() {     
+      return capacity;
    }
 
    @Override
    public void push(E element) throws StackAllocationException, NullPointerException {
-      // TODO: Implement this
-      throw new StackAllocationException("Missing implementation!");
+         
+      if (element == null){
+         throw new NullPointerException();
+      }
+      
+      if (currentIndex == itemArray.length-1){
+         int newCapacity = capacity * 2;
+         E[] newItemArray;
+         
+         try {
+            newItemArray = (E[]) Array.newInstance(itemArray[0].getClass(), newCapacity);
+         } catch (Exception e){
+            throw new StackAllocationException("Unable to increase the stack size!");
+         }
+
+         for (int i = 0; i < itemArray.length; i++){
+               newItemArray[i] = itemArray[i];
+         }
+          
+         capacity = newCapacity;
+         itemArray = newItemArray; 
+      }
+
+      currentIndex += 1;
+      itemArray[currentIndex] = element;     
    }
 
    @Override
    public E pop() throws StackIsEmptyException {
-      // TODO: Implement this
-      throw new StackIsEmptyException("Missing implementation!");
+      if (currentIndex == -1) {
+         throw new StackIsEmptyException("Stack is empty!");
+      }
+      currentIndex--;
+      E temp = itemArray[currentIndex + 1];
+      itemArray[currentIndex + 1] = null;
+      return temp;
    }
 
    @Override
    public E peek() throws StackIsEmptyException {
-      // TODO: Implement this
-      throw new StackIsEmptyException("Missing implementation!");
+      if (currentIndex == -1) {
+         throw new StackIsEmptyException("Stack is empty!");
+      }
+      return itemArray[currentIndex];
    }
 
    @Override
-   public int count() {
-      // TODO: Implement this
-      return -1;
+   public int count() {   
+      return currentIndex + 1;
    }
 
    @Override
    public void reset() {
-      // TODO: Implement this
+      currentIndex = -1;   
    }
 
    @Override
-   public boolean empty() {
-      // TODO: Implement this
+   public boolean empty() {     
+      if (currentIndex == -1) {
+         return true;
+      }
       return false;
    }
-
 }

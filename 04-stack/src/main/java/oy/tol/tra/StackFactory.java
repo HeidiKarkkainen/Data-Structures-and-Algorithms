@@ -35,6 +35,8 @@ public class StackFactory {
     * @return The stack implementation holding Characters.
     */
    public static StackInterface<Character> createCharacterStack(int size) {
-      return null;
+      StackImplementation<Character> stackk = new StackImplementation<>();
+      stackk.init(Character.class, size);
+      return stackk;
    }
 }

@@ -3,7 +3,7 @@ package oy.tol.tra;
 import java.lang.management.ManagementFactory;
 import java.lang.management.OperatingSystemMXBean;
 import java.util.Locale;
-
+import java.util.concurrent.ThreadLocalRandom;
 /**
  * A class to create larger and larger arrays of int and permutating the contents of the arrays.
  * 
@@ -46,6 +46,17 @@ public class PermutationArray {
       long start = System.currentTimeMillis();
       // TODO: implement the exercise algorithm to 1) fill and
       //       2) randomly permutate an array of integers.
+
+      for (int i = 0; i < randomArray.length; i++){
+         randomArray[i] = i+1;
+      }
+
+      for (int i = 0; i < randomArray.length; i++){
+         int x = ThreadLocalRandom.current().nextInt(size);
+         int temp = randomArray[i];
+         randomArray[i] = randomArray[x];
+         randomArray[x] = temp;
+      }
 
       // End of your implementation, don't change code below this line.
       long duration = System.currentTimeMillis() - start;
