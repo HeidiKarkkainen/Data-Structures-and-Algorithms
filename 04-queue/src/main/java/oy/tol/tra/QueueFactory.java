@@ -20,7 +20,10 @@ public class QueueFactory {
       // - Instantiates your queue implementation using Integer as template parameter, 
       // - initialize it to hold number of objects in the size parameter.
       // - and return the object to the caller.
-      return null;
-   }
 
+      QueueImplementation<Integer> queue = new QueueImplementation<>();
+      queue.init(Integer.class, size);
+      return queue;
+
+   }
 }

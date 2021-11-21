@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import javax.sound.sampled.SourceDataLine;
+
 public class DailyTasks {
 
    private QueueInterface<String> dailyTaskQueue = null;
@@ -19,6 +21,7 @@ public class DailyTasks {
 
    private void run() {
       try {
+            readTasks();
          // 1. create a queue for daily tasks, which are strings.
          // 2. initialize the task queue with String.class and max number of daily tasks.
          // 3. read the tasks for today using readTasks()
@@ -42,13 +45,28 @@ public class DailyTasks {
       int counter = 0;
       for (String task : allTasks) {
          // TODO: Enqueue the task to your Queue implementation:
+         
+         timer = new Timer();
+   
+         timer.scheduleAtFixedRate(new TimerTask() {
 
+            public void run() {
+               if (dailyTaskQueue.count() > 0) {
+                  System.out.println("Time to " + dailyTaskQueue.dequeue());
+               } else {
+                  timer.cancel();
+                  System.out.println("All done, see you tomorrow!");
+               }
+            }
+         }, TASK_DELAY_IN_SECONDS, TASK_DELAY_IN_SECONDS);
 
          counter++;
          if (counter >= MAX_DAILY_TASKS) {
             break;
          }
       }
+
+      System.out.println(counter);
       // TODO: print out to the console the number of tasks in the queue:
       
    }
