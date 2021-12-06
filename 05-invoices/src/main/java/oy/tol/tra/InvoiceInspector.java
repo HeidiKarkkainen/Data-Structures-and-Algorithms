@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.lang.Math;
 
 public class InvoiceInspector {
 
@@ -88,6 +89,17 @@ public class InvoiceInspector {
             toCollect.add(invoice);
          }
       }
+      int i = toCollect.size()-1;
+      while (i > 0) {
+         for (int index = i - 1; index >= 0; index--) {
+            if (toCollect.get(i).getID() < toCollect.get(index).getID()) {
+               Invoice tmp = toCollect.get(i);
+               toCollect.set(i, toCollect.get(index));
+               toCollect.set(index, tmp);
+            }
+         }
+         i--;
+      }
    }
 
    public void saveNewInvoices(String outputFile) throws IOException {
@@ -101,18 +113,111 @@ public class InvoiceInspector {
 
 
    /**
-    * TODO: Implement this method so that the time complexity of creating new
-    * invoices to clients is significantly faster than the naive
-    * handleInvoicesAndPaymentsSlow().
-    * How to do this:
     * 1. Both invoices and payments need to be sorted, so implement sorting with any method.
     * 2. When going through invoices, search for the corresponding payment using binary search, so implement that.
     * 3. If a payment was found, deduct from the invoice what was paid. If must still pay something, create invoice.
     * 4. If payment was not found, create a new invoice with the same invoice.
     * @throws IOException
     */
-   public void handleInvoicesAndPaymentsFast() {
+    public void handleInvoicesAndPaymentsFast() {
 
+      heapsort(invoices, invoices.length);
+      heapsort(payments, payments.length);
+
+      for (int i = 0; i < invoices.length; i++) {
+         Invoice invoice = invoices[i];
+         boolean noPaymentForInvoiceFound = true;
+
+         int match = binarySearch(invoice.getID(), payments, 0, payments.length - 1);
+
+         if (match >= 0) {
+            noPaymentForInvoiceFound = false;
+            Payment payment = payments[match];
+            if (invoice.sum.compareTo(payment.sum) > 0) {
+               toCollect.add(new Invoice(invoice.number, invoice.sum - payment.sum));
+            }
+         }
+
+         if (noPaymentForInvoiceFound) {
+            toCollect.add(invoice);
+         }
+      }
    }
 
+   public static int binarySearch(int aValue, Identifiable [] fromArray, int fromIndex, int toIndex) {
+
+      int splicedIndex;
+
+      if (fromIndex == toIndex){
+         if (fromArray[fromIndex].getID() == aValue) {
+            return fromIndex;
+         } else {
+            return -1;
+         }   
+      } else {
+         splicedIndex = (fromIndex + toIndex) / 2;
+         if (aValue <= fromArray[splicedIndex].getID()){
+            return  binarySearch(aValue, fromArray, fromIndex, splicedIndex);
+         } else {
+            return binarySearch(aValue, fromArray, splicedIndex +1, toIndex);
+         }
+      }   
+   }
+
+   private void heapsort(Identifiable[] A, int length){
+
+      heapify(A, length);
+      int end = length - 1;
+      while (end > 0) {
+         swap(A, end, 0);
+         end -=1;
+         siftDown(A, 0, end); 
+      }
+   }
+
+   private void heapify(Identifiable[] A, int count){
+      int start = parent(count-1);
+      while (start >= 0){
+         siftDown(A, start, count - 1);
+         start -=1; 
+      }
+   }
+
+   private void siftDown(Identifiable[] A, int start, int end) {
+      int root = start;
+      while (leftChild(root)<= end) { 
+         int child = leftChild(root);
+         int swap = root;
+         if (A[swap].getID() < A[child].getID()) {
+            swap = child;
+         }
+         if (child + 1 <= end && A[swap].getID() < A[child + 1].getID()) 
+            swap = child + 1;
+         if (swap == root){  
+            return;   
+         } else {
+            swap(A, root, swap);
+            root = swap;
+         }
+      }   
+   }
+
+   private int parent(int i){
+      return (int)Math.floor((i-1)/2);
+   }
+
+   private int leftChild(int i){
+      return 2 * i + 1;
+   }
+ 
+   private int rightChild(int i){
+      return 2 * i + 2;
+   }
+
+   private void swap(Identifiable[] A, int a, int b) {
+      Identifiable temp = A[a];
+      A[a] = A[b];
+      A[b] = temp;
+   }
+ 
 }
