@@ -2,6 +2,9 @@ package oy.tol.tra;
 
 public class FastPhoneBook implements PhoneBook {
 
+    Person[] persons = new Person[200000];
+    int collisionCount = 0;
+
     /**
      * TODO: Implement the add depending on your selected data structure; either hash table or BST.
      * In both cases, you need to calculate the hash code in the Person class.
@@ -11,12 +14,26 @@ public class FastPhoneBook implements PhoneBook {
      */
     @Override
     public boolean add(Person person) throws IllegalArgumentException {
-        throw new RuntimeException("Not implemented yet!");
+
+    int i = 0;
+
+    while (i < persons.length){
+        int hashValue = person.hashCode();
+        int index = ((hashValue + i) & 0x7fffffff) % persons.length;
+        if (persons[index] == null){
+            persons[index] = person;
+            return true;
+        }
+        collisionCount++;
+        i++;
     }
+    return false;
+}
+
 
     @Override
     public int size() {
-        return -1;
+        return persons.length;
     }
 
     /**
@@ -28,7 +45,20 @@ public class FastPhoneBook implements PhoneBook {
      */
     @Override
     public Person findPersonByPhone(String number) throws IllegalArgumentException {
-        throw new RuntimeException("Not implemented yet!");
+
+        Person person = new Person(number);
+        int i = 0;
+        int hashValue = person.hashCode();
+        int index = ((hashValue + i) & 0x7fffffff ) % persons.length;
+
+        while (i < persons.length - 1 && persons[index] != null){
+            if (persons[index].getPhoneNumber().equals(number)){
+                return persons[index];
+            }
+            i++;
+            index = ((hashValue + i) & 0x7fffffff ) % persons.length;
+        }
+        return null;
     }
 
 	@Override
@@ -52,7 +82,7 @@ public class FastPhoneBook implements PhoneBook {
      */
     @Override
     public void printStatus() {
-        System.out.println("TODO: IMPLEMENT THIS");
+        System.out.println("The number of collisions: " + collisionCount);
     }
     
 }

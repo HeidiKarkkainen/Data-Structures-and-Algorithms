@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+import java.nio.charset.StandardCharsets;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -149,7 +150,7 @@ public class PhoneBookTests {
 
     private void readPersonsFromFile(PhoneBook toPhoneBook) throws IOException {
         String entries;
-        entries = new String(getClass().getClassLoader().getResourceAsStream("PhoneBook.txt").readAllBytes());
+        entries = new String(getClass().getClassLoader().getResourceAsStream("PhoneBook.txt").readAllBytes(), StandardCharsets.UTF_8);
         String[] allEntries = entries.split("\\r?\\n");
         for (String entry : allEntries) {
             if (entry.length() > 0) {
