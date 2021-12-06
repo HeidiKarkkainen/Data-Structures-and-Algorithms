@@ -32,15 +32,29 @@ public class SearchArray {
    /**
     * Finds a number from the specified array using binary search, -1 if one could not be found.
     * Note that binary search works only with sorted arrays.
-    * <p>
-    * TODO: implement the binary search algorithm.
     * @param aValue The value to find.
     * @param fromArray The array to search.
     * @param fromIndex The index to start searching from.
     * @param toIndex The index to search to in the array.
     * @return The index of the number in the array, -1 if not found.
     */
-    public static int binarySearch(int aValue, int [] fromArray, int fromIndex, int toIndex) {
-       throw new RuntimeException("Not yet implemented");
+   public static int binarySearch(int aValue, int [] fromArray, int fromIndex, int toIndex) {
+
+         int splicedIndex;
+
+         if (fromIndex == toIndex){
+            if (fromArray[fromIndex] == aValue) {
+               return fromIndex;
+            } else {
+               return -1;
+            }   
+         } else {
+            splicedIndex = (fromIndex + toIndex) / 2;
+            if (aValue <= fromArray[splicedIndex]){
+               return  binarySearch(aValue, fromArray, fromIndex, splicedIndex);
+            } else {
+               return binarySearch(aValue, fromArray, splicedIndex +1, toIndex);
+            }
+         }   
    }
 }
