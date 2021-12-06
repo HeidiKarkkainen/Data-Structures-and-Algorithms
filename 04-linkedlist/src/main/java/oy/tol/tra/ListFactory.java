@@ -12,9 +12,12 @@ public class ListFactory {
     */
    public static LinkedListInterface<String> createStringLinkedList() {
       // TODO:
+      
+      LinkedListImplementation<String> st = new LinkedListImplementation<>();
+      return st;
+
       // - Instantiate your list implementation, 
       // - initialize it
       // - and return the list object to the caller.
-      return null;
    }
 }
