@@ -177,10 +177,7 @@ public class BookImplementation implements Book {
 
     @Override
     public void report() {
-
-        // math-luokan min metodia(?) käyttämällä verrataan onko kumpi pienempi: taulukon koko vai 100
-        // tehdään int-muuttuja
-        
+   
         if (sorted.length < 100){
             for (int i = 0; i < sorted.length; i++){
                 System.out.println((i+1) + " " + sorted[i].word);
