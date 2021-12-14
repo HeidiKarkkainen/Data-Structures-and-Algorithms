@@ -3,6 +3,8 @@ package com.anttijuustila.tira;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.lang.String;
+import java.nio.charset.StandardCharsets;
+
 
 public class BookImplementation implements Book {
 
@@ -61,26 +63,31 @@ public class BookImplementation implements Book {
     @Override
     public void countUniqueWords() throws IOException, OutOfMemoryError {
 
-        Charset utf8 = Charset.forName("UTF-8");
+        //Charset utf8 = Charset.forName("UTF-8");
         
         setIgnoredWords();
 
-        try (BufferedReader file = new BufferedReader(new InputStreamReader(
-            new FileInputStream(this.fileName), utf8))){
-          
+        // try (BufferedReader file = new BufferedReader(new InputStreamReader(
+        //     new FileInputStream(this.fileName), utf8))){
+        try (FileReader reader = new FileReader(fileName, StandardCharsets.UTF_8)){ 
+            
             int[] word = new int [100];      
             int specificCharacter; 
             int numberOfLetters = 0;
             String specificWord = "";
                              
-            while ((specificCharacter = file.read()) != -1){
+            while ((specificCharacter = reader.read()) != -1){
                 if (Character.isLetter(specificCharacter)){
                     word[numberOfLetters] = specificCharacter; 
                     numberOfLetters++;
                 } else {
                     specificWord = new String(word, 0, numberOfLetters).toLowerCase();
                     numberOfLetters = 0;
-                    if (specificWord.length() <= 1){
+                    if (specificWord.length() == 0){
+                        continue;
+                    }
+                    if (specificWord.length() == 1){
+                        totalNumberOfIgnoredWords++;
                         continue;
                     }
                     if (!wordIsAnIgnoredWord(specificWord)){
@@ -91,7 +98,7 @@ public class BookImplementation implements Book {
                 }    
             } 
 
-        file.close();
+        reader.close();
 
         } catch (IOException e) {
             System.out.println("Virhe");
@@ -139,8 +146,8 @@ public class BookImplementation implements Book {
 
         Charset utf8 = Charset.forName("UTF-8");
         try (BufferedReader file = new BufferedReader(new InputStreamReader(
-                new FileInputStream(this.ignoredWordsFile), utf8))){   
-
+               new FileInputStream(this.ignoredWordsFile), utf8))){   
+           
             int numberOfWords = 0; 
 
             while (true){
@@ -180,11 +187,11 @@ public class BookImplementation implements Book {
    
         if (sorted.length < 100){
             for (int i = 0; i < sorted.length; i++){
-                System.out.println((i+1) + " " + sorted[i].word);
+                System.out.println((i+1) + ". " + sorted[i].word + " " + sorted[i].count);
             }
         } else {
             for (int i = 0; i < 100; i++){
-                System.out.println((i+1) + " " + sorted[i].word);
+                System.out.println((i+1) + ". " + sorted[i].word + " " + sorted[i].count);
             }
         }
         System.out.println("The total number of words is " + totalNumberOfWords);
@@ -275,41 +282,41 @@ public class BookImplementation implements Book {
         return false;
     }
 
-    private void heapsort(WordCount[] words, int length){
+    private void heapsort(WordCount[] A, int length){
 
-        heapify(words, length);
+        heapify(A, length);
         int end = length - 1;
         while (end > 0) {
-           swap(words, end, 0);
+           swap(A, end, 0);
            end -=1;
-           siftDown(words, 0, end); 
+           siftDown(A, 0, end); 
         }
     }
   
-    private void heapify(WordCount[] words, int count){
+    private void heapify(WordCount[] A, int count){
 
         int start = parent(count-1);
         while (start >= 0){
-           siftDown(words, start, count - 1);
+           siftDown(A, start, count - 1);
            start -=1; 
         }
     }
   
-    private void siftDown(WordCount[] words, int start, int end) {
+    private void siftDown(WordCount[] A, int start, int end) {
 
         int root = start;
         while (leftChild(root)<= end) { 
            int child = leftChild(root);
            int swap = root;
-           if (words[swap].count > words[child].count) {
+           if (A[swap].count > A[child].count) {
               swap = child;
            }
-           if (child + 1 <= end && words[swap].count > words[child + 1].count) 
+           if (child + 1 <= end && A[swap].count > A[child + 1].count) 
               swap = child + 1;
            if (swap == root){  
               return;   
            } else {
-              swap(words, root, swap);
+              swap(A, root, swap);
               root = swap;
            }
         }   
@@ -327,23 +334,15 @@ public class BookImplementation implements Book {
         return 2 * i + 2;
     }
   
-    private void swap(WordCount[] words, int a, int b) {
-        WordCount temp = words[a];
-        words[a] = words[b];
-        words[b] = temp;
+    private void swap(WordCount[] A, int a, int b) {
+        WordCount temp = A[a];
+        A[a] = A[b];
+        A[b] = temp;
     }
      
     private void createSortedTable(){
 
-        int counter = 0;
-
-        for (int i = 0; i < words.length; i++){
-            if (words[i] != null){
-                counter++;
-            }
-        }
-
-        sorted = new WordCount[counter];
+        sorted = new WordCount[numberOfUniqueWords];
 
         int j = 0;
 
