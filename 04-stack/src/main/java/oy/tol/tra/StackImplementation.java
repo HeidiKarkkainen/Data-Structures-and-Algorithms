@@ -5,7 +5,6 @@ import java.lang.reflect.Array;
 /**
  * An implementation of the StackInterface.
  * <p>
- * TODO: Students, implement this so that the tests pass.
  */
 public class StackImplementation<E> implements StackInterface<E> {
 

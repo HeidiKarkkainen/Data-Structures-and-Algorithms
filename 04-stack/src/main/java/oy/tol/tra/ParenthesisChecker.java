@@ -4,9 +4,7 @@ package oy.tol.tra;
  * Uses the StackInterface implementation to check that parentheses in text
  * files match.
  * <p>
- * TODO: Students, implement the checkParentheses() method using your
- * StackImplementation to check if parentheses in the two test files match or
- * not.
+ * Checks if parentheses in the two test files match or not.
  * <p>
  * NOTE: The Person.json test file has an error, but the tests expect that. So
  * the test will not fail with that file -- the erroneus json file is
@@ -28,8 +26,7 @@ public class ParenthesisChecker {
    }
 
    /**
-    * TODO: Implement this function which checks if the given string has matching
-    * opening and closing parentheses. It should check for matching parentheses:
+    * Checks for matching parentheses:
     * <p>
     * <code>Lorem ipsum ( dolor sit {  amet, [ consectetur adipiscing ] elit, sed } do eiusmod tempor ) incididunt ut...</code>,
     * <p>
@@ -64,7 +61,6 @@ public class ParenthesisChecker {
     */
    public static int checkParentheses(StackInterface<Character> stack, String fromString)
          throws ParenthesesException, StackAllocationException {
-      // TODO:
       // for each character in the input string
       // if character is an opening parenthesis -- one of "([{"
       // push it into the stack
