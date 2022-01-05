@@ -46,46 +46,41 @@ public class LinkedListImplementation<Element> implements LinkedListInterface<El
       size++;
    }
 
-      /**
-    * Add an element to the specified index in the list.
-    * @param index The index where to add the element, must be 0...count().
-    * @param element The element to add, must not be null.
-    * @throws NullPointerException If the parameter element is null.
-    * @throws LinkedListAllocationException If failed to allocate a new list element.
-    * @throws IndexOutOfBoundsException If the specified index to the list is out of bounds.
-    */
    @Override
    public void add(int index, Element element) throws NullPointerException, LinkedListAllocationException, IndexOutOfBoundsException {
       
+      if (index < 0 || index > size()) {
+         throw new IndexOutOfBoundsException();
+      }
+
       if (element == null){
          throw new NullPointerException();
       }
 
-      if (index < 0 || index >= size()) {
-         throw new IndexOutOfBoundsException();
-      }
 
       Node<Element> node;
-      Node<Element> current;
-      int counter = 0; 
+      Node<Element> current = head;
+      Node<Element> previous; 
       
       try {
          node = new Node<Element>(element);
       } catch(Exception e) {
          throw new LinkedListAllocationException("Out of memory!");
       } 
-      
-      if (head == null) {
+
+      if (index == 0){
+         node.next = head;
          head = node;
-         head.next = null;
       } else {
-         current = head;
-         while(counter != index){
+         current = head.next;
+         previous = head;
+         // We have already passed element at index 0
+         for (int i = 1; i < index; i++){
+            previous = current;
             current = current.next;
-            counter++;
          }
-         node.next = current;
-         current.next = node;        
+         node.next = previous.next;
+         previous.next = node;
       }
 
       size++;
@@ -200,25 +195,18 @@ public class LinkedListImplementation<Element> implements LinkedListInterface<El
          throw new NullPointerException();
       }
 
-      Node<Element> current;
+      Node<Element> current = head;
       int counter = 0;
 
-      if (head == null){
-         return -1;
-      }
-
-      current = head;
-      
-      while((current != null) && (current.element != element)){
-         current = current.next; 
+      while (current != null){
+         if (current.element.equals(element)){
+            return counter;
+         }
+         current = current.next;
          counter++;
-      }  
-
-      if (current == null){
-         return -1;
       }
+      return -1;
 
-      return counter;
    }
 
    @Override
@@ -236,8 +224,19 @@ public class LinkedListImplementation<Element> implements LinkedListInterface<El
 
    @Override
    public void reverse() {
-      // TODO: implement this only when doing the task explained the TASK-2.md.
-      // This method is not needed in doing the task in the README.md.
+
+      Node<Element> previous = null;
+      Node<Element> current = head; 
+      Node<Element> next = null;
+      
+      while (current != null){
+         next = current.next; // Hold on to next node
+         current.next = previous; // Reverse current's next
+         previous = current; // Move previous forward to current
+         current = next; // Move current forward to next
+      }
+
+      head = previous;
    }
    
 }

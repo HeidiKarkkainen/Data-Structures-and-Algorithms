@@ -11,7 +11,6 @@ public class ListFactory {
     * @return The list object.
     */
    public static LinkedListInterface<String> createStringLinkedList() {
-      // TODO:
       
       LinkedListImplementation<String> st = new LinkedListImplementation<>();
       return st;
