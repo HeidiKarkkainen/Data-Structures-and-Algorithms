@@ -25,13 +25,6 @@ public class IntArray {
     * The method to reverse the internal Java int array.
     */
    public void reverse() {
-      /* TODO:
-       1. Edit the test data files to see if the reverse() really works or not.
-       2. Execute the IntArrayTests to see that some of them fail.
-       3. Study the code below and try to find what is the issue.
-       4. Use the debugger to see the execution and variable values if necessary.
-       5. Fix the issue.
-      */
       int i = 0;
       while (i < elements.length/2) {
          int temp = elements[i];
@@ -45,13 +38,6 @@ public class IntArray {
     * Sorts the array to ascending order.
     */
    public void sort() {
-      /* TODO:
-       1. Edit the test data files to see if the reverse() really works or not.
-       2. Execute the IntArrayTests to see that some of them fail.
-       3. Study the code below and try to find what is the issue.
-       4. Use the debugger to see the execution and variable values if necessary.
-       5. Fix the issue.
-      */
       int j = 0;
       while (j < elements.length) {
          int i = j;
