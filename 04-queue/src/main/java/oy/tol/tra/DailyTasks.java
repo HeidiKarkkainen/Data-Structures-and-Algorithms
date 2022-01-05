@@ -44,7 +44,6 @@ public class DailyTasks {
       String[] allTasks = tasks.split("\\r?\\n");
       int counter = 0;
       for (String task : allTasks) {
-         // TODO: Enqueue the task to your Queue implementation:
          
          timer = new Timer();
    

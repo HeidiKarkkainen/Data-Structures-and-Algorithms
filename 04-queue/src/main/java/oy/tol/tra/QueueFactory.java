@@ -16,10 +16,6 @@ public class QueueFactory {
     * @return The queue object.
     */
    public static QueueInterface<Integer> createIntegerQueue(int size) {
-      // TODO: Implement this when you have finished your QueueImplementation.
-      // - Instantiates your queue implementation using Integer as template parameter, 
-      // - initialize it to hold number of objects in the size parameter.
-      // - and return the object to the caller.
 
       QueueImplementation<Integer> queue = new QueueImplementation<>();
       queue.init(Integer.class, size);

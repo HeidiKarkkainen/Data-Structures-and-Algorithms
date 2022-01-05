@@ -14,9 +14,5 @@ public class ListFactory {
       
       LinkedListImplementation<String> st = new LinkedListImplementation<>();
       return st;
-
-      // - Instantiate your list implementation, 
-      // - initialize it
-      // - and return the list object to the caller.
    }
 }

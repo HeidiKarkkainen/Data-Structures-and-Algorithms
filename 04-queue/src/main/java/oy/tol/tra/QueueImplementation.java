@@ -42,11 +42,6 @@ public class QueueImplementation<E> implements QueueInterface<E> {
     * @return True if was able to add the item to queue, otherwise false.
     * @throw QueueAllocationException If the reallocation for the queue failed in case queue needs reallocation.
     * @throw NullPointerException If the element is null.
-
-    //Tuossa @return -kommentit kertovat että enqueue() palauttaa true tai false. 
-    //Metodi on kuitenkin void, joten se ei palauta mitään. 
-    //Virhetilanteessa (jos elementtiä ei voida lisätä jonoon) metodi falsen palauttamisen sijaan heittää
-    //QueueAllocationException -poikkeuksen.
     */
     @Override
     public void enqueue(E element) throws QueueAllocationException, NullPointerException{

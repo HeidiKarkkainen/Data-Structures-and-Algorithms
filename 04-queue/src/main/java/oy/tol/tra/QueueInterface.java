@@ -2,8 +2,7 @@ package oy.tol.tra;
 
 /**
  * A generic interface to queue class. Queues work following 
- * the first-in-first-out principle.
- * TODO: Implement this interface in a separate <code>QueueImplementation.java</code> file. 
+ * the first-in-first-out principle. 
  */
 public interface QueueInterface<E> {
    /**
