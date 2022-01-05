@@ -27,7 +27,6 @@ public class Mode {
     * @return The Result, containing the mode number and the count how many time it was in the array.
     */
    public static Result findMode(int [] array) {
-      // TODO: implement this to find the mode of the integer array.
 
       Arrays.sort(array);
       Result result = new Result();
