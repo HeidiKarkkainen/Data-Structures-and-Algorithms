@@ -24,34 +24,19 @@ public class Person implements Comparable<Person> {
     }
 
     /**
-     * TODO: Implement the method below to return a hash value. It can be based on the phone number
-     * of the person alone.
-     * 
-     * If you implement hash based on other than phone number, do note the relationship between the
-     * hashCode() and equals() that is assumed in Java.
      * @return Hash value of the person.
      */
     @Override
-    // public int hashCode() {
-    //     int hash = 7919;
-    //     for (int i = 0; i < phoneNumber.length(); i++){
-    //         hash = (7919 * hash + phoneNumber.charAt(i));
-    //     }
-    //     return hash;
-    // }
-
     public int hashCode() {
-        int hash = 37;
-        
+        int hash = 7919;
         for (int i = 0; i < phoneNumber.length(); i++){
-            hash = (hash * 33) + phoneNumber.charAt(i);
+            hash = (7919 * hash + phoneNumber.charAt(i));
         }
         return hash;
     }
 
     public int hashCode2() {
-        int hash = 5381;
-        
+        int hash = 5381;      
         for (int i = 0; i < phoneNumber.length(); i++){
             hash = ((hash << 5) + hash) + phoneNumber.charAt(i);
         }
@@ -82,32 +67,6 @@ public class Person implements Comparable<Person> {
     @Override
     public int compareTo(Person other) {
 
-          
-        int l1 = phoneNumber.length();
-        int l2 = other.getPhoneNumber().length();
-        int lmin = Math.min(l1, l2);
-  
-        for (int i = 0; i < lmin; i++) {
-            int str1_ch = (int)phoneNumber.charAt(i);
-            int str2_ch = (int)other.getPhoneNumber().charAt(i);
-  
-            if (str1_ch != str2_ch) {
-                return str1_ch - str2_ch;
-            }
-        }
-  
-        // Edge case for strings like
-        // String 1="Geeks" and String 2="Geeksforgeeks"
-        if (l1 != l2) {
-            return l1 - l2;
-        }
-  
-        // If none of the above conditions is true,
-        // it implies both the strings are equal
-        else {
-            return 0;
-        }
-
-        //return phoneNumber.compareTo(other.phoneNumber);
+        return phoneNumber.compareTo(other.phoneNumber);
     }
 }
