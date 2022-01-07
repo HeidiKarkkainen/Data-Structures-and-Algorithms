@@ -4,6 +4,7 @@ import java.io.*;
 import java.nio.charset.Charset;
 import java.lang.String;
 import java.nio.charset.StandardCharsets;
+import java.util.Locale;
 
 
 public class BookImplementation implements Book {
@@ -62,13 +63,9 @@ public class BookImplementation implements Book {
 
     @Override
     public void countUniqueWords() throws IOException, OutOfMemoryError {
-
-        //Charset utf8 = Charset.forName("UTF-8");
         
         setIgnoredWords();
 
-        // try (BufferedReader file = new BufferedReader(new InputStreamReader(
-        //     new FileInputStream(this.fileName), utf8))){
         try (FileReader reader = new FileReader(fileName, StandardCharsets.UTF_8)){ 
             
             int[] word = new int [100];      
@@ -90,7 +87,7 @@ public class BookImplementation implements Book {
                         totalNumberOfIgnoredWords++;
                         continue;
                     }
-                    if (!wordIsAnIgnoredWord(specificWord)){
+                    if (!wordIsIgnoredWord(specificWord)){
                         addWordToTable(specificWord);          
                     } else {
                         totalNumberOfIgnoredWords++;
@@ -101,11 +98,11 @@ public class BookImplementation implements Book {
         reader.close();
 
         } catch (IOException e) {
-            System.out.println("Virhe");
+            System.out.println("Error");
             e.printStackTrace();
             throw new IOException();
         }  catch (OutOfMemoryError e) {
-            System.out.println("Virhe");
+            System.out.println("Error");
             e.printStackTrace();
             throw new OutOfMemoryError();
         }
@@ -142,9 +139,10 @@ public class BookImplementation implements Book {
 
     private void setIgnoredWords() throws IOException, OutOfMemoryError {
 
-        String rivi;
+        String line;
 
         Charset utf8 = Charset.forName("UTF-8");
+
         try (BufferedReader file = new BufferedReader(new InputStreamReader(
                new FileInputStream(this.ignoredWordsFile), utf8))){   
            
@@ -152,31 +150,30 @@ public class BookImplementation implements Book {
 
             while (true){
                 int wordsOnLine = 0;
-                
-                rivi = file.readLine();
-                if (rivi == null) {
+                line = file.readLine();
+
+                if (line == null) {
                     break;
                 }
                 
-                String[] iwords = rivi.split(",");
+                String[] iwords = line.split(",");
                 
                 for (int i = 0; i < iwords.length; i++){
                     ignoredWords[numberOfWords+i] = iwords[i].toLowerCase();
                     wordsOnLine++;
                     numberOfUniqueIgnoredWords++;
-                }
-                
+                }              
                 numberOfWords = numberOfWords + wordsOnLine;
             } 
         
         file.close();
 
         } catch (IOException e) {
-            System.out.println("Virhe");
+            System.out.println("Error");
             e.printStackTrace();
             throw new IOException();
         }  catch (OutOfMemoryError e) {
-            System.out.println("Virhe");
+            System.out.println("Error");
             e.printStackTrace();
             throw new OutOfMemoryError();
         }       
@@ -185,20 +182,15 @@ public class BookImplementation implements Book {
     @Override
     public void report() {
    
-        if (sorted.length < 100){
-            for (int i = 0; i < sorted.length; i++){
-                System.out.println((i+1) + ". " + sorted[i].word + " " + sorted[i].count);
-            }
-        } else {
-            for (int i = 0; i < 100; i++){
-                System.out.println((i+1) + ". " + sorted[i].word + " " + sorted[i].count);
-            }
+        for (int i = 0; i < Math.min(sorted.length, 100); i++){
+            System.out.println((i+1) + ". " + sorted[i].word + " " + sorted[i].count);
         }
+      
         System.out.println("The total number of words is " + totalNumberOfWords);
         System.out.println("The number of unique words is " + numberOfUniqueWords);
         System.out.println("The total number of ignored words is " + totalNumberOfIgnoredWords);
         System.out.println("The number of unique ignored words is " +  numberOfUniqueIgnoredWords);
-        System.out.println("The number of collisions: " + collisionCount);
+        System.out.println("The number of collisions is " + collisionCount);
     }
 
     @Override
@@ -259,21 +251,23 @@ public class BookImplementation implements Book {
         return sorted[position].count;
     }
 
-    private static int hashCode(String sana) {
+    private static int hashCode(String word) {
+
         int hash = 7919;
-        for (int i = 0; i < sana.length(); i++){
-            hash = (7919 * hash + sana.charAt(i));
+        for (int i = 0; i < word.length(); i++){
+            hash = (7919 * hash + word.codePointAt(i));
         }
         return hash;
     }
 
-    public boolean wordIsAnIgnoredWord(String sana) {
+    public boolean wordIsIgnoredWord(String word) {
+
         int indeksi = 0;
         while (indeksi < ignoredWords.length){
             if(ignoredWords[indeksi] == null) {
                 break;
             }
-            if (ignoredWords[indeksi].equals(sana)){
+            if (ignoredWords[indeksi].equals(word)){
                 return true;
             } else {
                 indeksi++;

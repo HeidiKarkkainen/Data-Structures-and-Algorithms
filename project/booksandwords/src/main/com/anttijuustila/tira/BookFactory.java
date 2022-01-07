@@ -1,8 +1,6 @@
 package com.anttijuustila.tira;
 
 /**
- * Implement the <code>createBook()</code> method to return your instance of the Book interface.
- * 
  * @author Antti Juustila
  * @version 1.0
  */
