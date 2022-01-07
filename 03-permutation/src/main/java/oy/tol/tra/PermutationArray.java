@@ -44,8 +44,6 @@ public class PermutationArray {
    private static void fillArray(int size) {
       int[] randomArray = new int[size];
       long start = System.currentTimeMillis();
-      // TODO: implement the exercise algorithm to 1) fill and
-      //       2) randomly permutate an array of integers.
 
       for (int i = 0; i < randomArray.length; i++){
          randomArray[i] = i+1;
@@ -58,7 +56,6 @@ public class PermutationArray {
          randomArray[x] = temp;
       }
 
-      // End of your implementation, don't change code below this line.
       long duration = System.currentTimeMillis() - start;
       System.out.format(Locale.getDefault(), "%,15d\t%,10d\n", size, duration);
       randomArray = null;
